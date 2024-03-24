@@ -1,7 +1,7 @@
 package Aula09;
 
-public class Livro implements Publicacao {
-	//
+public class Livro implements Publicacao {	// 'implements' para acontecer a agregação entre classes 
+	// Atributos
 	private String titulo;
 	private String autor;
 	private int totPaginas;
@@ -9,7 +9,7 @@ public class Livro implements Publicacao {
 	private boolean aberto;
 	private Pessoa leitor;	// Agregação
 	
-	//
+	// Método Construtor
 	public Livro(String titulo, String autor, int totPaginas, Pessoa leitor) {
 		super();
 		this.titulo = titulo;
@@ -20,11 +20,13 @@ public class Livro implements Publicacao {
 		this.leitor = leitor;
 	}
 	
+	// toString
 	public String detalhes() {	// antigo 'toString'
 		return "Livro [titulo=" + titulo + "\n, autor=" + autor + "\n, totPaginas=" + totPaginas + "\n, pagAtual=" + pagAtual
 				+ "\n, aberto=" + aberto + "\n, leitor=" + leitor.getNome() + "\n, idade=" + leitor.getIdade() + "\n, sexo=" + leitor.getSexo() + "]";
 	}
 
+	// Método Especial
 	public String getTitulo() {
 		return titulo;
 	}
@@ -89,6 +91,11 @@ public class Livro implements Publicacao {
 	@Override
 	public void folhear(int p) {
 		// TODO Auto-generated method stub
+		if(p > this.totPaginas) {
+			this.pagAtual = 0;
+		} else {
+			this.pagAtual = p;
+		}
 		this.pagAtual = p;
 	}
 

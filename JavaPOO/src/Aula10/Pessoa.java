@@ -1,4 +1,4 @@
-package Aula09;
+package Aula10;
 
 public class Pessoa {
 	//
@@ -9,13 +9,6 @@ public class Pessoa {
 	//
 	public void fazerAniver() {
 		this.idade++;
-	}
-	
-	//
-	public Pessoa(String string, int i, String string2) {
-		this.nome = nome;
-		this.idade = idade;
-		this.sexo = sexo;
 	}
 
 	//
@@ -41,6 +34,12 @@ public class Pessoa {
 
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
+	}
+
+	//
+	@Override
+	public String toString() {
+		return "Pessoa [nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + "]";
 	}
 	
 	
